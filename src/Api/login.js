@@ -14,7 +14,7 @@ const login=async (loginData)=>{
 
         return {result:true,data:response.data};
     }catch(e){
-        return {result:false,data:e.response.error};
+        return {result:false,error:e.response.data.message.isArray()? e.response.data.message[0] : e.response.data.message};
     }
 }
 

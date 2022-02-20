@@ -3,9 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Login from './Pages/Login';
 import Header from './Components/Header';
+import Home from "./Pages/Home";
+import {BrowserRouter as Router, Routes,Route} from "react-router-dom";
+
 ReactDOM.render(
   <React.StrictMode>
-    <Login/>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
